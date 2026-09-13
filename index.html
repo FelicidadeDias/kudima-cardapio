@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>KUDIMA CAFÉ | Cardápio Digital</title>
 
-<meta name="description" content="KUDIMA CAFÉ — Cardápio digital. Escolha os seus favoritos e faça o seu pedido pelo WhatsApp.">
+<meta name="description"
+      content="Cardápio digital KUDIMA CAFÉ. Consulte o menu, escolha os seus produtos e faça o seu pedido.">
 
 <style>
 
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
-}
-
-:root{
-    --preto:#111111;
-    --dourado:#d49a2a;
-    --dourado-claro:#f0c76a;
-    --creme:#f7f1e7;
-    --branco:#ffffff;
-    --cinza:#666;
-    --verde:#25D366;
-    --vermelho:#c0392b;
 }
 
 html{
@@ -32,27 +29,41 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:var(--creme);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#f7f7f7;
+
     color:#222;
-    padding-bottom:90px;
+
+    line-height:1.5;
 }
 
 
-/* =========================
+/* =====================================================
    CABEÇALHO
-========================= */
+===================================================== */
 
 header{
-    min-height:330px;
+
+    min-height:370px;
 
     background:
-    linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.70)),
-    url("https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=1400&q=80")
-    center/cover;
+        linear-gradient(
+            rgba(0,0,0,.58),
+            rgba(0,0,0,.76)
+        ),
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
 
     display:flex;
+
+    flex-direction:column;
+
     align-items:center;
+
     justify-content:center;
 
     text-align:center;
@@ -62,58 +73,97 @@ header{
     padding:30px 20px;
 }
 
-
-/* LOGOTIPO */
-
 .logo{
-    width:110px;
-    height:110px;
 
-    margin:0 auto 18px;
+    width:125px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.logo img{
-    width:100%;
-    height:100%;
+    height:125px;
 
     object-fit:contain;
 
-    display:block;
+    border-radius:50%;
+
+    background:white;
+
+    padding:8px;
+
+    margin-bottom:16px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(0,0,0,.45);
 }
 
-
 header h1{
-    font-size:42px;
-    letter-spacing:3px;
+
+    font-size:36px;
+
+    letter-spacing:1px;
+
+    margin-bottom:7px;
 }
 
 header p{
-    margin-top:10px;
 
-    color:var(--dourado-claro);
+    font-size:16px;
 
-    font-size:17px;
+    opacity:.92;
+}
+
+.header-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:22px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+}
+
+.header-buttons button,
+.header-buttons a{
+
+    border:none;
+
+    text-decoration:none;
+
+    background:white;
+
+    color:#111;
+
+    padding:12px 19px;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.header-buttons button:hover,
+.header-buttons a:hover{
+
+    transform:translateY(-2px);
+
 }
 
 
-/* =========================
+/* =====================================================
    CATEGORIAS
-========================= */
+===================================================== */
 
-.categorias{
+.categories{
+
     position:sticky;
 
     top:0;
 
-    z-index:10;
-
-    background:white;
-
-    padding:12px;
+    z-index:50;
 
     display:flex;
 
@@ -121,75 +171,294 @@ header p{
 
     overflow-x:auto;
 
-    box-shadow:0 2px 10px rgba(0,0,0,.10);
+    background:white;
+
+    padding:12px;
+
+    box-shadow:
+        0 2px 10px
+        rgba(0,0,0,.10);
 }
 
-.categorias a{
+.categories a{
+
+    flex-shrink:0;
+
     text-decoration:none;
+
+    background:#f0f0f0;
 
     color:#222;
 
-    background:#f1f1f1;
+    padding:10px 17px;
 
-    padding:9px 15px;
-
-    border-radius:30px;
-
-    white-space:nowrap;
+    border-radius:25px;
 
     font-size:14px;
+
+    font-weight:bold;
+
+    transition:.2s;
 }
 
-.categorias a:hover{
-    background:var(--dourado);
+.categories a:hover{
+
+    background:#111;
 
     color:white;
 }
 
 
-/* =========================
-   CONTEÚDO
-========================= */
+/* =====================================================
+   CONTAINER
+===================================================== */
 
 .container{
-    max-width:1000px;
+
+    max-width:1100px;
 
     margin:auto;
 
-    padding:20px;
+    padding:
+        25px 15px
+        120px;
 }
 
-.categoria{
-    margin-top:30px;
 
-    scroll-margin-top:70px;
+/* =====================================================
+   SOBRE
+===================================================== */
+
+.about{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:27px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.07);
 }
 
-.categoria h2{
-    font-size:25px;
+.about h2{
 
-    margin-bottom:17px;
-
-    border-left:5px solid var(--dourado);
-
-    padding-left:12px;
+    margin-bottom:12px;
 }
 
-.produtos{
+.about p{
+
+    color:#666;
+
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   INFORMAÇÕES
+===================================================== */
+
+.info-grid{
+
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
+        repeat(
+            auto-fit,
+            minmax(220px,1fr)
+        );
 
-    gap:18px;
+    gap:15px;
+
+    margin-bottom:30px;
+}
+
+.info-card{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,.07);
+
+    transition:.2s;
+}
+
+.info-card:hover{
+
+    transform:translateY(-3px);
+}
+
+.info-icon{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.info-card h3{
+
+    margin-bottom:7px;
+}
+
+.info-card p{
+
+    color:#666;
+
+    line-height:1.6;
+
+    font-size:14px;
+}
+
+.info-card a{
+
+    color:#111;
+
+    font-weight:bold;
+
+    text-decoration:none;
 }
 
 
-/* =========================
-   PRODUTOS
-========================= */
+/* =====================================================
+   DESTAQUE
+===================================================== */
 
-.produto{
+.highlight{
+
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #333
+        );
+
+    color:white;
+
+    padding:28px;
+
+    border-radius:20px;
+
+    margin:25px 0;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.15);
+}
+
+.highlight small{
+
+    color:#ccc;
+
+    font-weight:bold;
+}
+
+.highlight h2{
+
+    margin:
+        8px 0 7px;
+}
+
+.highlight p{
+
+    color:#ddd;
+
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   PESQUISA
+===================================================== */
+
+.search-box{
+
+    margin:25px 0;
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:
+        16px 18px;
+
+    border:
+        1px solid #ddd;
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    outline:none;
+
+    background:white;
+}
+
+.search-box input:focus{
+
+    border-color:#111;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0,0,0,.05);
+}
+
+
+/* =====================================================
+   TÍTULOS
+===================================================== */
+
+.section-title{
+
+    margin:
+        32px 0 16px;
+
+    font-size:25px;
+}
+
+.section-title span{
+
+    display:block;
+
+    width:45px;
+
+    height:4px;
+
+    background:#111;
+
+    margin-top:7px;
+
+    border-radius:5px;
+}
+
+
+/* =====================================================
+   PRODUTOS
+===================================================== */
+
+.products{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(230px,1fr)
+        );
+
+    gap:20px;
+}
+
+.product{
+
     background:white;
 
     border-radius:18px;
@@ -197,716 +466,1106 @@ header p{
     overflow:hidden;
 
     box-shadow:
-    0 5px 20px rgba(0,0,0,.08);
+        0 5px 20px
+        rgba(0,0,0,.08);
 
     transition:.25s;
 }
 
-.produto:hover{
-    transform:translateY(-3px);
+.product:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 10px 28px
+        rgba(0,0,0,.13);
 }
 
-.produto img{
+.product img{
+
     width:100%;
 
-    height:190px;
-
-    display:block;
+    height:195px;
 
     object-fit:cover;
-
-    background:#ddd;
 }
 
-.produto-info{
-    padding:17px;
+.product-info{
+
+    padding:18px;
 }
 
-.produto h3{
+.product-info h3{
+
     font-size:19px;
 
     margin-bottom:7px;
 }
 
-.produto p{
-    color:var(--cinza);
+.product-info p{
+
+    color:#777;
 
     font-size:14px;
 
-    line-height:1.5;
+    line-height:1.6;
 
-    min-height:42px;
+    min-height:45px;
 }
 
-.rodape-produto{
-    display:flex;
+.price{
 
-    justify-content:space-between;
+    font-size:20px;
+
+    font-weight:bold;
+
+    margin:14px 0;
+}
+
+.add-btn{
+
+    width:100%;
+
+    border:none;
+
+    background:#111;
+
+    color:white;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.2s;
+}
+
+.add-btn:hover{
+
+    background:#333;
+
+    transform:translateY(-1px);
+}
+
+
+/* =====================================================
+   QR CODE
+===================================================== */
+
+.qr-section{
+
+    margin:
+        40px 0 20px;
+}
+
+.qr-card{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:
+        32px 20px;
+
+    text-align:center;
+
+    box-shadow:
+        0 6px 25px
+        rgba(0,0,0,.08);
+}
+
+.qr-icon{
+
+    font-size:36px;
+
+    margin-bottom:10px;
+}
+
+.qr-card h2{
+
+    margin-bottom:10px;
+}
+
+.qr-card p{
+
+    max-width:520px;
+
+    margin:
+        0 auto 20px;
+
+    color:#666;
+
+    line-height:1.7;
+}
+
+.qr-code{
+
+    width:230px;
+
+    height:230px;
+
+    padding:10px;
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,.10);
+}
+
+.qr-small{
+
+    margin-top:15px !important;
+
+    font-weight:bold;
+
+    color:#222 !important;
+}
+
+
+/* =====================================================
+   CARRINHO FIXO
+===================================================== */
+
+.cart{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:0;
+
+    right:0;
+
+    z-index:100;
+
+    background:white;
+
+    box-shadow:
+        0 -4px 20px
+        rgba(0,0,0,.15);
+
+    padding:
+        12px 15px;
+}
+
+.cart-inner{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:flex;
 
     align-items:center;
 
-    gap:10px;
+    justify-content:space-between;
 
-    margin-top:15px;
+    gap:15px;
 }
 
-.preco{
-    color:#a66f00;
+.cart-info{
+
+    font-size:14px;
+}
+
+.cart-total{
 
     font-size:19px;
 
     font-weight:bold;
 }
 
-.btn{
+.cart-btn{
+
     border:none;
 
-    background:var(--preto);
+    background:#111;
 
     color:white;
 
-    padding:10px 14px;
+    padding:
+        14px 20px;
 
-    border-radius:9px;
+    border-radius:12px;
+
+    font-weight:bold;
 
     cursor:pointer;
 
-    font-weight:bold;
+    transition:.2s;
 }
 
-.btn:hover{
-    background:var(--dourado);
+.cart-btn:hover{
+
+    background:#333;
 }
 
 
-/* =========================
-   CARRINHO
-========================= */
+/* =====================================================
+   MODAL
+===================================================== */
 
-.carrinho{
-    max-width:1000px;
+.modal{
 
-    margin:45px auto 0;
+    display:none;
 
-    background:var(--preto);
+    position:fixed;
 
-    color:white;
+    inset:0;
+
+    background:
+        rgba(0,0,0,.65);
+
+    z-index:200;
+
+    padding:20px;
+
+    overflow:auto;
+}
+
+.modal-content{
+
+    background:white;
+
+    max-width:550px;
+
+    margin:
+        40px auto;
 
     border-radius:20px;
 
     padding:22px;
-
-    box-shadow:
-    0 8px 30px rgba(0,0,0,.20);
 }
 
-.carrinho h2{
-    margin-bottom:18px;
+.modal-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:20px;
 }
 
-.item-carrinho{
-    background:#222;
+.close{
 
-    padding:12px;
+    border:none;
 
-    border-radius:10px;
+    background:#eee;
 
-    margin-bottom:9px;
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    font-size:22px;
+
+    cursor:pointer;
+}
+
+.order-item{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    padding:12px 0;
+
+    border-bottom:
+        1px solid #eee;
+}
+
+.order-name{
+
+    flex:1;
+
+    font-weight:bold;
+}
+
+.controls{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.controls button{
+
+    width:32px;
+
+    height:32px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#eee;
+
+    cursor:pointer;
+
+    font-size:18px;
+}
+
+.order-total{
 
     display:flex;
 
     justify-content:space-between;
 
-    align-items:center;
+    margin:20px 0;
 
-    gap:10px;
-}
-
-.controles{
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
-}
-
-.controles button{
-    border:none;
-
-    width:30px;
-
-    height:30px;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    background:white;
-
-    color:#111;
-}
-
-.total{
-    border-top:1px solid #444;
-
-    margin-top:15px;
-
-    padding-top:15px;
-
-    font-size:22px;
+    font-size:20px;
 
     font-weight:bold;
 }
 
-.whatsapp{
-    width:100%;
 
-    border:none;
+/* =====================================================
+   FORMULÁRIO
+===================================================== */
 
-    padding:15px;
+.form-group{
 
-    margin-top:18px;
+    margin-bottom:13px;
+}
 
-    background:var(--verde);
+.form-group label{
 
-    color:white;
+    display:block;
 
-    border-radius:10px;
-
-    font-size:17px;
+    margin-bottom:6px;
 
     font-weight:bold;
-
-    cursor:pointer;
-}
-
-.whatsapp:hover{
-    background:#1db954;
-}
-
-
-/* =========================
-   BOTÃO CARRINHO
-========================= */
-
-.botao-carrinho{
-    position:fixed;
-
-    right:18px;
-
-    bottom:18px;
-
-    z-index:20;
-
-    width:58px;
-
-    height:58px;
-
-    border-radius:50%;
-
-    border:none;
-
-    background:var(--dourado);
-
-    color:white;
-
-    font-size:24px;
-
-    box-shadow:
-    0 5px 20px rgba(0,0,0,.25);
-
-    cursor:pointer;
-}
-
-.contador{
-    position:absolute;
-
-    top:-4px;
-
-    right:-3px;
-
-    background:var(--vermelho);
-
-    color:white;
-
-    width:22px;
-
-    height:22px;
-
-    border-radius:50%;
-
-    font-size:12px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-}
-
-
-/* =========================
-   RODAPÉ
-========================= */
-
-footer{
-    text-align:center;
-
-    padding:35px 20px;
-
-    color:#777;
 
     font-size:14px;
 }
 
+.form-group input,
+.form-group textarea{
 
-/* =========================
+    width:100%;
+
+    border:
+        1px solid #ddd;
+
+    border-radius:10px;
+
+    padding:13px;
+
+    font-size:15px;
+
+    outline:none;
+
+    font-family:inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+
+    border-color:#111;
+}
+
+.form-group textarea{
+
+    min-height:80px;
+
+    resize:vertical;
+}
+
+.whatsapp-btn{
+
+    width:100%;
+
+    border:none;
+
+    background:#25D366;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.whatsapp-btn:hover{
+
+    background:#20b957;
+}
+
+.clear-btn{
+
+    width:100%;
+
+    border:none;
+
+    background:#eee;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-top:10px;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+
+footer{
+
+    background:#111;
+
+    color:white;
+
+    text-align:center;
+
+    padding:
+        40px 20px
+        110px;
+}
+
+footer h3{
+
+    margin-bottom:8px;
+}
+
+footer p{
+
+    color:#bbb;
+
+    font-size:14px;
+
+    line-height:1.6;
+}
+
+.footer-brand{
+
+    margin-top:15px;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:600px){
 
     header{
-        min-height:300px;
-    }
 
-    header h1{
-        font-size:31px;
+        min-height:320px;
     }
 
     .logo{
-        width:85px;
-        height:85px;
+
+        width:95px;
+
+        height:95px;
     }
 
-    .container{
-        padding:15px;
+    header h1{
+
+        font-size:28px;
     }
 
-    .produtos{
+    .products{
+
         grid-template-columns:1fr;
     }
 
-    .produto img{
+    .product img{
+
         height:210px;
     }
 
-    .item-carrinho{
-        align-items:flex-start;
+    .cart-inner{
+
+        gap:8px;
     }
 
-}
+    .cart-btn{
 
-
-/* =========================
-   TELAS PEQUENAS
-========================= */
-
-@media(max-width:380px){
-
-    header h1{
-        font-size:27px;
+        padding:
+            12px 15px;
     }
 
-    .produto-info{
-        padding:14px;
+    .cart-total{
+
+        font-size:17px;
     }
 
-    .rodape-produto{
-        flex-direction:column;
+    .modal-content{
 
-        align-items:stretch;
+        margin:
+            15px auto;
     }
 
-    .btn{
-        width:100%;
+    .qr-code{
+
+        width:210px;
+
+        height:210px;
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     CABEÇALHO
-========================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
-<div>
-
-    <div class="logo">
-
-        <img
+    <img
         src="logo.png"
-        alt="Logotipo KUDIMA CAFÉ">
-
-    </div>
-
+        alt="Logotipo KUDIMA CAFÉ"
+        class="logo"
+    >
 
     <h1>
         KUDIMA CAFÉ
     </h1>
 
-
     <p>
-        Sabor que marca momentos.
+        Sabores que tornam cada momento especial.
     </p>
 
-</div>
+    <div class="header-buttons">
+
+        <button
+            onclick="partilharCardapio()"
+        >
+            📤 Partilhar
+        </button>
+
+        <a href="#informacoes">
+            ℹ️ Informações
+        </a>
+
+    </div>
 
 </header>
 
 
-<!-- =========================
-     CATEGORIAS
-========================= -->
+<!-- =====================================================
+     MENU
+===================================================== -->
 
-<nav class="categorias">
+<nav class="categories">
 
-<a href="#cafeteria">
-☕ Cafeteria
-</a>
+    <a href="#inicio">
+        Início
+    </a>
 
-<a href="#hamburgueres">
-🍔 Hambúrgueres
-</a>
+    <a href="#cafeteria">
+        ☕ Cafeteria
+    </a>
 
-<a href="#refeicoes">
-🍗 Refeições
-</a>
+    <a href="#hamburgueres">
+        🍔 Hambúrgueres
+    </a>
+
+    <a href="#refeicoes">
+        🍗 Refeições
+    </a>
 
 </nav>
 
 
+<main
+    class="container"
+    id="inicio"
+>
 
-<main class="container">
+
+<!-- =====================================================
+     SOBRE
+===================================================== -->
+
+<section class="about">
+
+    <h2>
+        Sobre o KUDIMA CAFÉ
+    </h2>
+
+    <p>
+        Bem-vindo ao KUDIMA CAFÉ.
+        Aqui valorizamos bons sabores,
+        qualidade e momentos especiais.
+        Consulte o nosso cardápio,
+        escolha os seus favoritos e
+        envie o seu pedido de forma simples.
+    </p>
+
+</section>
 
 
-<!-- =========================
+<!-- =====================================================
+     INFORMAÇÕES
+===================================================== -->
+
+<section id="informacoes">
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🕐
+            </div>
+
+            <h3>
+                Horário
+            </h3>
+
+            <p>
+                Segunda a Domingo<br>
+                08:00 — 22:00
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📍
+            </div>
+
+            <h3>
+                Localização
+            </h3>
+
+            <p>
+                Localização do KUDIMA CAFÉ
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📞
+            </div>
+
+            <h3>
+                Contacto
+            </h3>
+
+            <p>
+
+                <a href="tel:+244923000000">
+
+                    +244 923 000 000
+
+                </a>
+
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📲
+            </div>
+
+            <h3>
+                WhatsApp
+            </h3>
+
+            <p>
+                Faça o seu pedido
+                diretamente pelo WhatsApp.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DESTAQUE
+===================================================== -->
+
+<section class="highlight">
+
+    <small>
+        ⭐ DESTAQUE
+    </small>
+
+    <h2>
+        Experimente o sabor KUDIMA
+    </h2>
+
+    <p>
+        Escolha os seus favoritos
+        no nosso cardápio e envie
+        o pedido de forma rápida
+        e prática.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     PESQUISA
+===================================================== -->
+
+<div class="search-box">
+
+    <input
+        type="search"
+        id="pesquisa"
+        placeholder="🔎 Procurar no cardápio..."
+        oninput="pesquisarProdutos()"
+    >
+
+</div>
+
+
+<!-- =====================================================
      CAFETERIA
-========================= -->
+===================================================== -->
 
-<section
-class="categoria"
-id="cafeteria">
+<section id="cafeteria">
 
-<h2>
-☕ Cafeteria
-</h2>
+    <h2 class="section-title">
 
+        ☕ Cafeteria
 
-<div class="produtos">
+        <span></span>
 
-
-<!-- CAFÉ EXPRESSO -->
-
-<div class="produto">
-
-<img
-src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
-alt="Café Expresso">
+    </h2>
 
 
-<div class="produto-info">
-
-<h3>
-Café Expresso
-</h3>
-
-<p>
-Café intenso e aromático, preparado especialmente para si.
-</p>
+    <div class="products">
 
 
-<div class="rodape-produto">
+        <article
+            class="product"
+            data-name="café expresso"
+        >
 
-<span class="preco">
-1.000 Kz
-</span>
+            <img
+                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
+                alt="Café Expresso"
+            >
 
+            <div class="product-info">
 
-<button
-class="btn"
-onclick="adicionar('Café Expresso',1000)">
+                <h3>
+                    Café Expresso
+                </h3>
 
-Adicionar
+                <p>
+                    Café intenso e aromático,
+                    preparado na hora.
+                </p>
 
-</button>
+                <div class="price">
+                    1.000 Kz
+                </div>
 
-</div>
+                <button
+                    class="add-btn"
+                    onclick="adicionar(
+                        'Café Expresso',
+                        1000
+                    )"
+                >
+                    + Adicionar
+                </button>
 
-</div>
+            </div>
 
-</div>
-
-
-
-<!-- CAPPUCCINO -->
-
-<div class="produto">
-
-<img
-src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=800&q=80"
-alt="Cappuccino">
-
-
-<div class="produto-info">
-
-<h3>
-Cappuccino
-</h3>
-
-<p>
-Café cremoso com leite e uma deliciosa espuma.
-</p>
+        </article>
 
 
-<div class="rodape-produto">
+        <article
+            class="product"
+            data-name="cappuccino"
+        >
 
-<span class="preco">
-1.500 Kz
-</span>
+            <img
+                src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=800&q=80"
+                alt="Cappuccino"
+            >
 
+            <div class="product-info">
 
-<button
-class="btn"
-onclick="adicionar('Cappuccino',1500)">
+                <h3>
+                    Cappuccino
+                </h3>
 
-Adicionar
+                <p>
+                    Cremoso, suave e perfeito
+                    para qualquer momento.
+                </p>
 
-</button>
+                <div class="price">
+                    1.500 Kz
+                </div>
 
-</div>
+                <button
+                    class="add-btn"
+                    onclick="adicionar(
+                        'Cappuccino',
+                        1500
+                    )"
+                >
+                    + Adicionar
+                </button>
 
-</div>
+            </div>
 
-</div>
+        </article>
 
-
-</div>
+    </div>
 
 </section>
 
 
-
-<!-- =========================
+<!-- =====================================================
      HAMBÚRGUERES
-========================= -->
+===================================================== -->
 
-<section
-class="categoria"
-id="hamburgueres">
+<section id="hamburgueres">
 
-<h2>
-🍔 Hambúrgueres
-</h2>
+    <h2 class="section-title">
 
+        🍔 Hambúrgueres
 
-<div class="produtos">
+        <span></span>
 
-
-<!-- HAMBÚRGUER KUDIMA -->
-
-<div class="produto">
-
-<img
-src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
-alt="Hambúrguer KUDIMA">
+    </h2>
 
 
-<div class="produto-info">
-
-<h3>
-Hambúrguer KUDIMA
-</h3>
-
-<p>
-Pão, carne, queijo, alface, tomate e molho especial.
-</p>
+    <div class="products">
 
 
-<div class="rodape-produto">
+        <article
+            class="product"
+            data-name="hambúrguer kudima"
+        >
 
-<span class="preco">
-3.500 Kz
-</span>
+            <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                alt="Hambúrguer KUDIMA"
+            >
 
+            <div class="product-info">
 
-<button
-class="btn"
-onclick="adicionar('Hambúrguer KUDIMA',3500)">
+                <h3>
+                    Hambúrguer KUDIMA
+                </h3>
 
-Adicionar
+                <p>
+                    Hambúrguer especial da casa,
+                    preparado com muito sabor.
+                </p>
 
-</button>
+                <div class="price">
+                    3.500 Kz
+                </div>
 
-</div>
+                <button
+                    class="add-btn"
+                    onclick="adicionar(
+                        'Hambúrguer KUDIMA',
+                        3500
+                    )"
+                >
+                    + Adicionar
+                </button>
 
-</div>
+            </div>
 
-</div>
-
-
-
-<!-- CHEESEBURGER -->
-
-<div class="produto">
-
-<img
-src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?auto=format&fit=crop&w=800&q=80"
-alt="Cheeseburger">
-
-
-<div class="produto-info">
-
-<h3>
-Cheeseburger
-</h3>
-
-<p>
-Hambúrguer suculento com queijo e molho especial.
-</p>
+        </article>
 
 
-<div class="rodape-produto">
+        <article
+            class="product"
+            data-name="cheeseburger"
+        >
 
-<span class="preco">
-3.000 Kz
-</span>
+            <img
+                src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?auto=format&fit=crop&w=800&q=80"
+                alt="Cheeseburger"
+            >
 
+            <div class="product-info">
 
-<button
-class="btn"
-onclick="adicionar('Cheeseburger',3000)">
+                <h3>
+                    Cheeseburger
+                </h3>
 
-Adicionar
+                <p>
+                    Hambúrguer com queijo,
+                    preparado para matar a sua fome.
+                </p>
 
-</button>
+                <div class="price">
+                    3.000 Kz
+                </div>
 
-</div>
+                <button
+                    class="add-btn"
+                    onclick="adicionar(
+                        'Cheeseburger',
+                        3000
+                    )"
+                >
+                    + Adicionar
+                </button>
 
-</div>
+            </div>
 
-</div>
+        </article>
 
-
-</div>
+    </div>
 
 </section>
 
 
-
-<!-- =========================
+<!-- =====================================================
      REFEIÇÕES
-========================= -->
+===================================================== -->
 
-<section
-class="categoria"
-id="refeicoes">
+<section id="refeicoes">
 
-<h2>
-🍗 Refeições
-</h2>
+    <h2 class="section-title">
 
+        🍗 Refeições
 
-<div class="produtos">
+        <span></span>
 
-
-<!-- FRANGO GRELHADO -->
-
-<div class="produto">
-
-<img
-src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80"
-alt="Frango Grelhado">
+    </h2>
 
 
-<div class="produto-info">
-
-<h3>
-Frango Grelhado
-</h3>
-
-<p>
-Frango grelhado acompanhado de batata e salada.
-</p>
+    <div class="products">
 
 
-<div class="rodape-produto">
+        <article
+            class="product"
+            data-name="frango grelhado"
+        >
 
-<span class="preco">
-4.500 Kz
-</span>
+            <img
+                src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80"
+                alt="Frango Grelhado"
+            >
 
+            <div class="product-info">
 
-<button
-class="btn"
-onclick="adicionar('Frango Grelhado',4500)">
+                <h3>
+                    Frango Grelhado
+                </h3>
 
-Adicionar
+                <p>
+                    Frango grelhado, saboroso
+                    e preparado na hora.
+                </p>
 
-</button>
+                <div class="price">
+                    4.500 Kz
+                </div>
 
-</div>
+                <button
+                    class="add-btn"
+                    onclick="adicionar(
+                        'Frango Grelhado',
+                        4500
+                    )"
+                >
+                    + Adicionar
+                </button>
 
-</div>
+            </div>
 
-</div>
+        </article>
 
-
-</div>
+    </div>
 
 </section>
 
 
+<!-- =====================================================
+     QR CODE
+===================================================== -->
 
-<!-- =========================
-     CARRINHO
-========================= -->
+<section class="qr-section">
 
-<section
-class="carrinho"
-id="carrinho">
+    <div class="qr-card">
 
-<h2>
-🛒 Seu Pedido
-</h2>
+        <div class="qr-icon">
+            📱
+        </div>
 
+        <h2>
+            Consulte o nosso cardápio
+        </h2>
 
-<div id="listaPedido">
-
-Nenhum produto adicionado.
-
-</div>
-
-
-<div class="total">
-
-Total:
-
-<span id="total">
-0
-</span>
-
-Kz
-
-</div>
+        <p>
+            Aponte a câmera do seu telemóvel
+            para o QR Code e acesse o
+            cardápio digital do KUDIMA CAFÉ.
+        </p>
 
 
-<button
-class="whatsapp"
-onclick="enviarWhatsApp()">
+        <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Ffelicidadedias.github.io%2Fkudima-cardapio%2F"
+            alt="QR Code KUDIMA CAFÉ"
+            class="qr-code"
+        >
 
-🟢 Finalizar pedido pelo WhatsApp
 
-</button>
+        <p class="qr-small">
+            Escaneie • Escolha • Peça
+        </p>
+
+    </div>
 
 </section>
 
@@ -914,84 +1573,218 @@ onclick="enviarWhatsApp()">
 </main>
 
 
+<!-- =====================================================
+     CARRINHO
+===================================================== -->
 
-<!-- =========================
-     BOTÃO FLUTUANTE
-========================= -->
+<div class="cart">
 
-<button
-class="botao-carrinho"
-onclick="irParaCarrinho()">
-
-🛒
-
-<span
-class="contador"
-id="contador">
-
-0
-
-</span>
-
-</button>
+    <div class="cart-inner">
 
 
+        <div class="cart-info">
 
-<!-- =========================
+            <div>
+
+                🛒
+
+                <span id="quantidade">
+                    0
+                </span>
+
+                item(ns)
+
+            </div>
+
+
+            <div
+                class="cart-total"
+                id="total"
+            >
+                0 Kz
+            </div>
+
+        </div>
+
+
+        <button
+            class="cart-btn"
+            onclick="abrirCarrinho()"
+        >
+            Ver pedido
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL DO PEDIDO
+===================================================== -->
+
+<div
+    class="modal"
+    id="modal"
+>
+
+    <div class="modal-content">
+
+
+        <div class="modal-header">
+
+            <h2>
+                🛒 Seu pedido
+            </h2>
+
+            <button
+                class="close"
+                onclick="fecharCarrinho()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="listaPedido"></div>
+
+
+        <div class="order-total">
+
+            <span>
+                Total
+            </span>
+
+            <span id="modalTotal">
+                0 Kz
+            </span>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="nome">
+                Seu nome
+            </label>
+
+            <input
+                id="nome"
+                type="text"
+                placeholder="Digite o seu nome"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="mesa">
+                Mesa / Local
+            </label>
+
+            <input
+                id="mesa"
+                type="text"
+                placeholder="Ex.: Mesa 4"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="observacao">
+                Observação
+            </label>
+
+            <textarea
+                id="observacao"
+                placeholder="Ex.: sem cebola, pouco açúcar..."
+            ></textarea>
+
+        </div>
+
+
+        <button
+            class="whatsapp-btn"
+            onclick="enviarWhatsApp()"
+        >
+            📲 Enviar pedido pelo WhatsApp
+        </button>
+
+
+        <button
+            class="clear-btn"
+            onclick="limparPedido()"
+        >
+            Limpar pedido
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
      RODAPÉ
-========================= -->
+===================================================== -->
 
 <footer>
 
-<strong>
-KUDIMA CAFÉ
-</strong>
+    <h3>
+        KUDIMA CAFÉ
+    </h3>
 
-<br><br>
+    <p>
+        Sabor, qualidade e bons momentos.
+    </p>
 
-Sabor que marca momentos.
-
-<br><br>
-
-© 2026 KUDIMA CAFÉ
-
-<br><br>
-
-Cardápio digital desenvolvido por
-<strong>
-Fely e Amigos
-</strong>
+    <p class="footer-brand">
+        Cardápio digital desenvolvido
+        por Fely e Amigos.
+    </p>
 
 </footer>
 
 
-
 <script>
 
-/* =========================
-   PEDIDO
-========================= */
+/* =====================================================
+   CONFIGURAÇÃO
+===================================================== */
+
+/*
+   ATENÇÃO:
+   Este número é apenas um exemplo.
+   Substituir pelo WhatsApp REAL do KUDIMA.
+*/
+
+const numeroWhatsApp =
+"244923000000";
+
+
+/* =====================================================
+   CARRINHO
+===================================================== */
 
 let pedido = [];
 
 
-/* ADICIONAR */
-
 function adicionar(nome,preco){
 
     const existente =
-    pedido.find(
-        item => item.nome === nome
-    );
+        pedido.find(
+            item => item.nome === nome
+        );
 
 
     if(existente){
 
         existente.quantidade++;
 
-    }
-
-    else{
+    }else{
 
         pedido.push({
 
@@ -1008,19 +1801,8 @@ function adicionar(nome,preco){
 
     atualizarPedido();
 
-
-    document
-    .getElementById("carrinho")
-    .scrollIntoView({
-
-        behavior:"smooth"
-
-    });
-
 }
 
-
-/* AUMENTAR */
 
 function aumentar(index){
 
@@ -1031,19 +1813,14 @@ function aumentar(index){
 }
 
 
-/* DIMINUIR */
-
 function diminuir(index){
 
+    pedido[index].quantidade--;
+
+
     if(
-        pedido[index].quantidade > 1
+        pedido[index].quantidade <= 0
     ){
-
-        pedido[index].quantidade--;
-
-    }
-
-    else{
 
         pedido.splice(index,1);
 
@@ -1055,153 +1832,265 @@ function diminuir(index){
 }
 
 
-/* ATUALIZAR CARRINHO */
+function calcularTotal(){
+
+    return pedido.reduce(
+
+        (total,item) =>
+
+        total +
+        item.preco *
+        item.quantidade,
+
+        0
+
+    );
+
+}
+
+
+function calcularQuantidade(){
+
+    return pedido.reduce(
+
+        (total,item) =>
+
+        total +
+        item.quantidade,
+
+        0
+
+    );
+
+}
+
+
+function formatarPreco(valor){
+
+    return valor.toLocaleString(
+        "pt-AO"
+    ) + " Kz";
+
+}
+
+
+/* =====================================================
+   ATUALIZAR PEDIDO
+===================================================== */
 
 function atualizarPedido(){
 
+    const quantidade =
+        calcularQuantidade();
+
+
+    const total =
+        calcularTotal();
+
+
+    document.getElementById(
+        "quantidade"
+    ).textContent =
+        quantidade;
+
+
+    document.getElementById(
+        "total"
+    ).textContent =
+        formatarPreco(total);
+
+
     const lista =
-    document.getElementById(
-        "listaPedido"
-    );
-
-
-    const contador =
-    document.getElementById(
-        "contador"
-    );
+        document.getElementById(
+            "listaPedido"
+        );
 
 
     if(pedido.length === 0){
 
         lista.innerHTML =
-        "Nenhum produto adicionado.";
 
-        contador.innerText =
-        "0";
+        `
+        <p
+            style="
+                text-align:center;
+                padding:20px;
+                color:#777;
+            "
+        >
+            O seu pedido está vazio.
+        </p>
+        `;
 
-        document
-        .getElementById("total")
-        .innerText =
-        "0";
+    }else{
+
+        lista.innerHTML =
+
+        pedido.map(
+
+            (item,index) => `
+
+            <div class="order-item">
+
+                <div class="order-name">
+
+                    ${item.nome}
+
+                    <br>
+
+                    <small>
+
+                        ${formatarPreco(
+                            item.preco
+                        )}
+
+                    </small>
+
+                </div>
+
+
+                <div class="controls">
+
+                    <button
+                        onclick="diminuir(${index})"
+                    >
+                        −
+                    </button>
+
+
+                    <strong>
+                        ${item.quantidade}
+                    </strong>
+
+
+                    <button
+                        onclick="aumentar(${index})"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+            `
+
+        ).join("");
+
+    }
+
+
+    document.getElementById(
+        "modalTotal"
+    ).textContent =
+        formatarPreco(total);
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+function abrirCarrinho(){
+
+    document.getElementById(
+        "modal"
+    ).style.display =
+        "block";
+
+
+    atualizarPedido();
+
+}
+
+
+function fecharCarrinho(){
+
+    document.getElementById(
+        "modal"
+    ).style.display =
+        "none";
+
+}
+
+
+window.onclick =
+function(event){
+
+    const modal =
+        document.getElementById(
+            "modal"
+        );
+
+
+    if(
+        event.target === modal
+    ){
+
+        fecharCarrinho();
+
+    }
+
+};
+
+
+/* =====================================================
+   LIMPAR PEDIDO
+===================================================== */
+
+function limparPedido(){
+
+    pedido = [];
+
+    atualizarPedido();
+
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+function enviarWhatsApp(){
+
+    if(
+        pedido.length === 0
+    ){
+
+        alert(
+            "Adicione pelo menos um produto ao pedido."
+        );
 
         return;
 
     }
 
 
-    let html = "";
-
-    let total = 0;
-
-    let quantidadeTotal = 0;
-
-
-    pedido.forEach(
-    (item,index)=>{
-
-        const subtotal =
-        item.preco *
-        item.quantidade;
+    const nome =
+        document.getElementById(
+            "nome"
+        ).value.trim();
 
 
-        total += subtotal;
+    const mesa =
+        document.getElementById(
+            "mesa"
+        ).value.trim();
 
 
-        quantidadeTotal +=
-        item.quantidade;
+    const observacao =
+        document.getElementById(
+            "observacao"
+        ).value.trim();
 
 
-        html += `
-
-        <div class="item-carrinho">
-
-            <div>
-
-                <strong>
-                ${item.nome}
-                </strong>
-
-                <br>
-
-                ${item.preco.toLocaleString()}
-                Kz ×
-                ${item.quantidade}
-
-            </div>
-
-
-            <div class="controles">
-
-                <button
-                onclick="diminuir(${index})">
-
-                −
-
-                </button>
-
-
-                <strong>
-                ${item.quantidade}
-                </strong>
-
-
-                <button
-                onclick="aumentar(${index})">
-
-                +
-
-                </button>
-
-            </div>
-
-        </div>
-
-        `;
-
-    });
-
-
-    lista.innerHTML =
-    html;
-
-
-    document
-    .getElementById("total")
-    .innerText =
-    total.toLocaleString();
-
-
-    contador.innerText =
-    quantidadeTotal;
-
-}
-
-
-/* IR PARA CARRINHO */
-
-function irParaCarrinho(){
-
-    document
-    .getElementById("carrinho")
-    .scrollIntoView({
-
-        behavior:"smooth"
-
-    });
-
-}
-
-
-/* =========================
-   WHATSAPP
-========================= */
-
-function enviarWhatsApp(){
-
-    if(pedido.length === 0){
+    if(
+        nome === ""
+    ){
 
         alert(
-        "Adicione pelo menos um produto ao pedido."
+            "Digite o seu nome."
         );
 
         return;
@@ -1210,55 +2099,87 @@ function enviarWhatsApp(){
 
 
     let mensagem =
-    "Olá KUDIMA CAFÉ! Gostaria de fazer este pedido:%0A%0A";
-
-
-    let total = 0;
-
-
-    pedido.forEach(
-    (item,index)=>{
-
-        const subtotal =
-        item.preco *
-        item.quantidade;
-
-
-        total += subtotal;
-
-
-        mensagem +=
-        `${index + 1}. ${item.nome} x${item.quantidade} — ${subtotal.toLocaleString()} Kz%0A`;
-
-    });
+        "Olá, KUDIMA CAFÉ! 👋\n\n";
 
 
     mensagem +=
-    `%0ATotal: ${total.toLocaleString()} Kz`;
+        "Gostaria de fazer este pedido:\n\n";
 
 
-    /*
-    =====================================
-    WHATSAPP DO KUDIMA CAFÉ
-    =====================================
+    pedido.forEach(
+        item => {
 
-    Substitua o número abaixo pelo
-    número REAL do estabelecimento.
-
-    Formato:
-
-    244923123456
-
-    Sem + e sem espaços.
-    */
+            const subtotal =
+                item.preco *
+                item.quantidade;
 
 
-    const numero =
-    "244923000000";
+            mensagem +=
+
+                "• " +
+                item.nome +
+                " x" +
+                item.quantidade +
+                " — " +
+                formatarPreco(
+                    subtotal
+                ) +
+                "\n";
+
+        }
+    );
+
+
+    mensagem +=
+
+        "\n💰 Total: " +
+        formatarPreco(
+            calcularTotal()
+        );
+
+
+    mensagem +=
+
+        "\n👤 Nome: " +
+        nome;
+
+
+    if(
+        mesa !== ""
+    ){
+
+        mensagem +=
+
+            "\n🪑 Mesa/Local: " +
+            mesa;
+
+    }
+
+
+    if(
+        observacao !== ""
+    ){
+
+        mensagem +=
+
+            "\n📝 Observação: " +
+            observacao;
+
+    }
+
+
+    mensagem +=
+        "\n\nObrigado!";
 
 
     const url =
-    `https://wa.me/${numero}?text=${mensagem}`;
+
+        "https://wa.me/" +
+        numeroWhatsApp +
+        "?text=" +
+        encodeURIComponent(
+            mensagem
+        );
 
 
     window.open(
@@ -1267,6 +2188,108 @@ function enviarWhatsApp(){
     );
 
 }
+
+
+/* =====================================================
+   PESQUISA
+===================================================== */
+
+function pesquisarProdutos(){
+
+    const termo =
+
+        document.getElementById(
+            "pesquisa"
+        ).value
+        .toLowerCase()
+        .trim();
+
+
+    const produtos =
+
+        document.querySelectorAll(
+            ".product"
+        );
+
+
+    produtos.forEach(
+        produto => {
+
+            const nome =
+
+                produto.dataset.name
+                .toLowerCase();
+
+
+            if(
+                nome.includes(termo)
+            ){
+
+                produto.style.display =
+                    "";
+
+            }else{
+
+                produto.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   PARTILHAR
+===================================================== */
+
+function partilharCardapio(){
+
+    const dados = {
+
+        title:
+            "KUDIMA CAFÉ",
+
+        text:
+            "Confira o cardápio digital do KUDIMA CAFÉ.",
+
+        url:
+            window.location.href
+
+    };
+
+
+    if(
+        navigator.share
+    ){
+
+        navigator.share(
+            dados
+        );
+
+    }else{
+
+        navigator.clipboard.writeText(
+            window.location.href
+        );
+
+
+        alert(
+            "Link do cardápio copiado!"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   INICIALIZAÇÃO
+===================================================== */
+
+atualizarPedido();
 
 </script>
 
