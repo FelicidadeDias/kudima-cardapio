@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KUDIMA CAFÉ | Cardápio Digital</title>
+
+<meta name="description" content="Cardápio digital do KUDIMA CAFÉ. Consulte os nossos produtos e faça o seu pedido pelo WhatsApp.">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f7f3ed;
+    color:#222;
+}
+
+header{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+}
+
+header h1{
+    font-size:32px;
+    letter-spacing:2px;
+}
+
+header p{
+    margin-top:8px;
+    color:#e4b04a;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.categoria{
+    margin-top:30px;
+}
+
+.categoria h2{
+    font-size:23px;
+    margin-bottom:15px;
+    border-left:5px solid #d69b2d;
+    padding-left:10px;
+}
+
+.produtos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.produto{
+    background:white;
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.produto h3{
+    margin-bottom:7px;
+}
+
+.produto p{
+    color:#666;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.preco{
+    font-weight:bold;
+    font-size:18px;
+    color:#b87900;
+}
+
+button{
+    width:100%;
+    border:0;
+    padding:12px;
+    margin-top:12px;
+    border-radius:8px;
+    background:#111;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#b87900;
+}
+
+.pedido{
+    margin-top:40px;
+    background:#111;
+    color:white;
+    padding:20px;
+    border-radius:15px;
+}
+
+.pedido h2{
+    margin-bottom:15px;
+}
+
+#listaPedido{
+    margin-bottom:15px;
+}
+
+.total{
+    font-size:21px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.whatsapp{
+    background:#25D366;
+    margin-top:18px;
+}
+
+.whatsapp:hover{
+    background:#1ebe5d;
+}
+
+footer{
+    text-align:center;
+    padding:30px 20px;
+    color:#777;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>KUDIMA CAFÉ</h1>
+    <p>Cardápio Digital</p>
+</header>
+
+<div class="container">
+
+<section class="categoria">
+<h2>☕ Cafeteria</h2>
+
+<div class="produtos">
+
+<div class="produto">
+<h3>Café Expresso</h3>
+<p>Café intenso e aromático.</p>
+<div class="preco">1.000 Kz</div>
+<button onclick="adicionar('Café Expresso',1000)">
+Adicionar ao pedido
+</button>
+</div>
+
+<div class="produto">
+<h3>Cappuccino</h3>
+<p>Café cremoso com leite e espuma.</p>
+<div class="preco">1.500 Kz</div>
+<button onclick="adicionar('Cappuccino',1500)">
+Adicionar ao pedido
+</button>
+</div>
+
+</div>
+</section>
+
+
+<section class="categoria">
+<h2>🍔 Hambúrgueres</h2>
+
+<div class="produtos">
+
+<div class="produto">
+<h3>Hambúrguer KUDIMA</h3>
+<p>Pão, carne, queijo, alface, tomate e molho especial.</p>
+<div class="preco">3.500 Kz</div>
+<button onclick="adicionar('Hambúrguer KUDIMA',3500)">
+Adicionar ao pedido
+</button>
+</div>
+
+<div class="produto">
+<h3>Cheeseburger</h3>
+<p>Hambúrguer com queijo e molho especial.</p>
+<div class="preco">3.000 Kz</div>
+<button onclick="adicionar('Cheeseburger',3000)">
+Adicionar ao pedido
+</button>
+</div>
+
+</div>
+</section>
+
+
+<section class="categoria">
+<h2>🍗 Refeições</h2>
+
+<div class="produtos">
+
+<div class="produto">
+<h3>Frango Grelhado</h3>
+<p>Frango grelhado acompanhado de batata e salada.</p>
+<div class="preco">4.500 Kz</div>
+<button onclick="adicionar('Frango Grelhado',4500)">
+Adicionar ao pedido
+</button>
+</div>
+
+</div>
+</section>
+
+
+<section class="pedido">
+
+<h2>🛒 Meu Pedido</h2>
+
+<div id="listaPedido">
+    Nenhum produto adicionado.
+</div>
+
+<div class="total">
+Total: <span id="total">0</span> Kz
+</div>
+
+<button class="whatsapp" onclick="enviarWhatsApp()">
+🟢 Finalizar pedido pelo WhatsApp
+</button>
+
+</section>
+
+</div>
+
+<footer>
+© 2026 KUDIMA CAFÉ — Cardápio Digital
+<br><br>
+Criado por Fely e Amigos | Soluções Digitais
+</footer>
+
+
+<script>
+
+let pedido = [];
+let total = 0;
+
+function adicionar(nome, preco){
+
+    pedido.push({
+        nome:nome,
+        preco:preco
+    });
+
+    total += preco;
+
+    atualizarPedido();
+}
+
+function atualizarPedido(){
+
+    const lista = document.getElementById("listaPedido");
+
+    if(pedido.length === 0){
+
+        lista.innerHTML = "Nenhum produto adicionado.";
+        return;
+
+    }
+
+    let html = "";
+
+    pedido.forEach((item,index)=>{
+
+        html += `
+        <div style="margin-bottom:8px;">
+        ${index + 1}. ${item.nome} — ${item.preco.toLocaleString()} Kz
+        </div>
+        `;
+
+    });
+
+    lista.innerHTML = html;
+
+    document.getElementById("total").innerText =
+        total.toLocaleString();
+}
+
+function enviarWhatsApp(){
+
+    if(pedido.length === 0){
+
+        alert("Adicione pelo menos um produto ao pedido.");
+
+        return;
+    }
+
+    let mensagem =
+        "Olá KUDIMA CAFÉ! Gostaria de fazer este pedido:%0A%0A";
+
+    pedido.forEach((item,index)=>{
+
+        mensagem +=
+        `${index + 1}. ${item.nome} - ${item.preco.toLocaleString()} Kz%0A`;
+
+    });
+
+    mensagem +=
+        `%0ATotal: ${total.toLocaleString()} Kz`;
+
+    /*
+    COLOQUE AQUI O NÚMERO DO WHATSAPP
+    Exemplo: 244923000000
+    */
+
+    const numero = "244923000000";
+
+    const url =
+        `https://wa.me/${numero}?text=${mensagem}`;
+
+    window.open(url,"_blank");
+}
+
+</script>
+
+</body>
+</html>
