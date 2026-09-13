@@ -6,40 +6,106 @@
 
 <title>KUDIMA CAFÉ | Cardápio Digital</title>
 
-<meta name="description" content="Cardápio digital do KUDIMA CAFÉ. Consulte os nossos produtos e faça o seu pedido pelo WhatsApp.">
+<meta name="description" content="KUDIMA CAFÉ — Cardápio digital. Escolha os seus favoritos e faça o pedido pelo WhatsApp.">
 
 <style>
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --preto:#111111;
+    --dourado:#d49a2a;
+    --creme:#f7f1e7;
+    --branco:#ffffff;
+    --cinza:#666;
+    --verde:#25D366;
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:#f7f3ed;
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--creme);
     color:#222;
+    padding-bottom:90px;
 }
 
+/* CABEÇALHO */
+
 header{
-    background:#111;
-    color:white;
+    background:
+    linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
+    url("https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+
+    min-height:330px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:35px 20px;
+    color:white;
+    padding:30px 20px;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    border:2px solid var(--dourado);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 18px;
+    font-size:28px;
+    font-weight:bold;
+    color:var(--dourado);
 }
 
 header h1{
-    font-size:32px;
-    letter-spacing:2px;
+    font-size:42px;
+    letter-spacing:3px;
 }
 
 header p{
-    margin-top:8px;
-    color:#e4b04a;
+    margin-top:10px;
+    color:#f0c76a;
+    font-size:17px;
 }
 
+/* CATEGORIAS */
+
+.categorias{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:white;
+    padding:12px;
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.categorias a{
+    text-decoration:none;
+    color:#222;
+    background:#f3f3f3;
+    padding:9px 14px;
+    border-radius:30px;
+    white-space:nowrap;
+    font-size:14px;
+}
+
+.categorias a:hover{
+    background:var(--dourado);
+    color:white;
+}
+
+/* CONTEÚDO */
+
 .container{
-    max-width:900px;
+    max-width:1000px;
     margin:auto;
     padding:20px;
 }
@@ -49,93 +115,225 @@ header p{
 }
 
 .categoria h2{
-    font-size:23px;
-    margin-bottom:15px;
-    border-left:5px solid #d69b2d;
-    padding-left:10px;
+    font-size:25px;
+    margin-bottom:16px;
+    border-left:5px solid var(--dourado);
+    padding-left:12px;
 }
 
 .produtos{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
+    gap:18px;
 }
+
+/* PRODUTO */
 
 .produto{
     background:white;
-    border-radius:14px;
-    padding:18px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.25s;
+}
+
+.produto:hover{
+    transform:translateY(-3px);
+}
+
+.produto img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+.produto-info{
+    padding:17px;
 }
 
 .produto h3{
+    font-size:19px;
     margin-bottom:7px;
 }
 
 .produto p{
-    color:#666;
+    color:var(--cinza);
     font-size:14px;
-    margin-bottom:12px;
+    line-height:1.5;
+    min-height:42px;
 }
 
-.preco{
-    font-weight:bold;
-    font-size:18px;
-    color:#b87900;
-}
-
-button{
-    width:100%;
-    border:0;
-    padding:12px;
-    margin-top:12px;
-    border-radius:8px;
-    background:#111;
-    color:white;
-    font-size:15px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#b87900;
-}
-
-.pedido{
-    margin-top:40px;
-    background:#111;
-    color:white;
-    padding:20px;
-    border-radius:15px;
-}
-
-.pedido h2{
-    margin-bottom:15px;
-}
-
-#listaPedido{
-    margin-bottom:15px;
-}
-
-.total{
-    font-size:21px;
-    font-weight:bold;
+.rodape-produto{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     margin-top:15px;
 }
 
+.preco{
+    color:#a66f00;
+    font-size:19px;
+    font-weight:bold;
+}
+
+.btn{
+    border:none;
+    background:var(--preto);
+    color:white;
+    padding:10px 14px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:var(--dourado);
+}
+
+/* CARRINHO */
+
+.carrinho{
+    max-width:1000px;
+    margin:45px auto 0;
+    background:var(--preto);
+    color:white;
+    border-radius:20px;
+    padding:22px;
+    box-shadow:0 8px 30px rgba(0,0,0,.2);
+}
+
+.carrinho h2{
+    margin-bottom:18px;
+}
+
+.item-carrinho{
+    background:#222;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:9px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+.controles{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.controles button{
+    border:none;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.remover{
+    background:#b33;
+    color:white;
+}
+
+.total{
+    border-top:1px solid #444;
+    margin-top:15px;
+    padding-top:15px;
+    font-size:22px;
+    font-weight:bold;
+}
+
 .whatsapp{
-    background:#25D366;
+    width:100%;
+    border:none;
+    padding:15px;
     margin-top:18px;
+    background:var(--verde);
+    color:white;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 .whatsapp:hover{
-    background:#1ebe5d;
+    background:#1db954;
 }
+
+/* RODAPÉ */
 
 footer{
     text-align:center;
-    padding:30px 20px;
+    padding:35px 20px;
     color:#777;
     font-size:14px;
+}
+
+/* BOTÃO FLUTUANTE */
+
+.botao-carrinho{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:20;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    border:none;
+    background:var(--dourado);
+    color:white;
+    font-size:24px;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    cursor:pointer;
+}
+
+.contador{
+    position:absolute;
+    top:-4px;
+    right:-3px;
+    background:#d33;
+    color:white;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    font-size:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header{
+        min-height:300px;
+    }
+
+    header h1{
+        font-size:31px;
+    }
+
+    .logo{
+        width:75px;
+        height:75px;
+        font-size:23px;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+    .produtos{
+        grid-template-columns:1fr;
+    }
+
+    .produto img{
+        height:210px;
+    }
+
 }
 </style>
 </head>
@@ -143,94 +341,204 @@ footer{
 <body>
 
 <header>
+
+<div>
+    <div class="logo">K</div>
+
     <h1>KUDIMA CAFÉ</h1>
-    <p>Cardápio Digital</p>
+
+    <p>Sabor que marca momentos.</p>
+</div>
+
 </header>
 
-<div class="container">
 
-<section class="categoria">
+<nav class="categorias">
+
+<a href="#cafeteria">☕ Cafeteria</a>
+<a href="#hamburgueres">🍔 Hambúrgueres</a>
+<a href="#refeicoes">🍗 Refeições</a>
+
+</nav>
+
+
+<main class="container">
+
+
+<section class="categoria" id="cafeteria">
+
 <h2>☕ Cafeteria</h2>
 
 <div class="produtos">
 
+
 <div class="produto">
+
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80">
+
+<div class="produto-info">
+
 <h3>Café Expresso</h3>
-<p>Café intenso e aromático.</p>
-<div class="preco">1.000 Kz</div>
-<button onclick="adicionar('Café Expresso',1000)">
-Adicionar ao pedido
+
+<p>Café intenso e aromático, preparado especialmente para si.</p>
+
+<div class="rodape-produto">
+
+<span class="preco">1.000 Kz</span>
+
+<button class="btn" onclick="adicionar('Café Expresso',1000)">
+Adicionar
 </button>
+
 </div>
+
+</div>
+
+</div>
+
 
 <div class="produto">
+
+<img src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=800&q=80">
+
+<div class="produto-info">
+
 <h3>Cappuccino</h3>
-<p>Café cremoso com leite e espuma.</p>
-<div class="preco">1.500 Kz</div>
-<button onclick="adicionar('Cappuccino',1500)">
-Adicionar ao pedido
+
+<p>Café cremoso com leite e uma deliciosa espuma.</p>
+
+<div class="rodape-produto">
+
+<span class="preco">1.500 Kz</span>
+
+<button class="btn" onclick="adicionar('Cappuccino',1500)">
+Adicionar
 </button>
+
 </div>
 
 </div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<section class="categoria">
+
+<section class="categoria" id="hamburgueres">
+
 <h2>🍔 Hambúrgueres</h2>
 
 <div class="produtos">
 
+
 <div class="produto">
+
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80">
+
+<div class="produto-info">
+
 <h3>Hambúrguer KUDIMA</h3>
+
 <p>Pão, carne, queijo, alface, tomate e molho especial.</p>
-<div class="preco">3.500 Kz</div>
-<button onclick="adicionar('Hambúrguer KUDIMA',3500)">
-Adicionar ao pedido
+
+<div class="rodape-produto">
+
+<span class="preco">3.500 Kz</span>
+
+<button class="btn" onclick="adicionar('Hambúrguer KUDIMA',3500)">
+Adicionar
 </button>
+
 </div>
+
+</div>
+
+</div>
+
 
 <div class="produto">
+
+<img src="https://images.unsplash.com/photo-1553979459-d2229ba7433a?auto=format&fit=crop&w=800&q=80">
+
+<div class="produto-info">
+
 <h3>Cheeseburger</h3>
-<p>Hambúrguer com queijo e molho especial.</p>
-<div class="preco">3.000 Kz</div>
-<button onclick="adicionar('Cheeseburger',3000)">
-Adicionar ao pedido
+
+<p>Hambúrguer suculento com queijo e molho especial.</p>
+
+<div class="rodape-produto">
+
+<span class="preco">3.000 Kz</span>
+
+<button class="btn" onclick="adicionar('Cheeseburger',3000)">
+Adicionar
 </button>
+
 </div>
 
 </div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<section class="categoria">
+
+<section class="categoria" id="refeicoes">
+
 <h2>🍗 Refeições</h2>
 
 <div class="produtos">
 
+
 <div class="produto">
+
+<img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80">
+
+<div class="produto-info">
+
 <h3>Frango Grelhado</h3>
+
 <p>Frango grelhado acompanhado de batata e salada.</p>
-<div class="preco">4.500 Kz</div>
-<button onclick="adicionar('Frango Grelhado',4500)">
-Adicionar ao pedido
+
+<div class="rodape-produto">
+
+<span class="preco">4.500 Kz</span>
+
+<button class="btn" onclick="adicionar('Frango Grelhado',4500)">
+Adicionar
 </button>
+
 </div>
 
 </div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<section class="pedido">
 
-<h2>🛒 Meu Pedido</h2>
+<section class="carrinho" id="carrinho">
+
+<h2>🛒 Seu Pedido</h2>
 
 <div id="listaPedido">
-    Nenhum produto adicionado.
+Nenhum produto adicionado.
 </div>
 
 <div class="total">
-Total: <span id="total">0</span> Kz
+
+Total:
+<span id="total">0</span> Kz
+
 </div>
 
 <button class="whatsapp" onclick="enviarWhatsApp()">
@@ -239,60 +547,192 @@ Total: <span id="total">0</span> Kz
 
 </section>
 
-</div>
+</main>
+
+
+<button class="botao-carrinho" onclick="irParaCarrinho()">
+
+🛒
+
+<span class="contador" id="contador">
+0
+</span>
+
+</button>
+
 
 <footer>
-© 2026 KUDIMA CAFÉ — Cardápio Digital
+
+<strong>KUDIMA CAFÉ</strong>
+
 <br><br>
-Criado por Fely e Amigos | Soluções Digitais
+
+Sabor que marca momentos.
+
+<br><br>
+
+© 2026 KUDIMA CAFÉ
+
+<br><br>
+
+Cardápio digital desenvolvido por
+<strong>Fely e Amigos</strong>
+
 </footer>
+
 
 
 <script>
 
 let pedido = [];
-let total = 0;
 
-function adicionar(nome, preco){
 
-    pedido.push({
-        nome:nome,
-        preco:preco
-    });
+function adicionar(nome,preco){
 
-    total += preco;
+    const existente = pedido.find(item => item.nome === nome);
+
+    if(existente){
+
+        existente.quantidade++;
+
+    }else{
+
+        pedido.push({
+            nome:nome,
+            preco:preco,
+            quantidade:1
+        });
+
+    }
 
     atualizarPedido();
+
+    document.getElementById("carrinho").scrollIntoView({
+        behavior:"smooth"
+    });
+
 }
+
+
+function aumentar(index){
+
+    pedido[index].quantidade++;
+
+    atualizarPedido();
+
+}
+
+
+function diminuir(index){
+
+    if(pedido[index].quantidade > 1){
+
+        pedido[index].quantidade--;
+
+    }else{
+
+        pedido.splice(index,1);
+
+    }
+
+    atualizarPedido();
+
+}
+
 
 function atualizarPedido(){
 
-    const lista = document.getElementById("listaPedido");
+    const lista =
+        document.getElementById("listaPedido");
+
+    const contador =
+        document.getElementById("contador");
 
     if(pedido.length === 0){
 
-        lista.innerHTML = "Nenhum produto adicionado.";
+        lista.innerHTML =
+            "Nenhum produto adicionado.";
+
+        contador.innerText = "0";
+
+        document.getElementById("total").innerText = "0";
+
         return;
 
     }
 
+
     let html = "";
+
+    let total = 0;
+
+    let quantidadeTotal = 0;
+
 
     pedido.forEach((item,index)=>{
 
+        const subtotal =
+            item.preco * item.quantidade;
+
+        total += subtotal;
+
+        quantidadeTotal += item.quantidade;
+
+
         html += `
-        <div style="margin-bottom:8px;">
-        ${index + 1}. ${item.nome} — ${item.preco.toLocaleString()} Kz
+
+        <div class="item-carrinho">
+
+            <div>
+
+                <strong>${item.nome}</strong>
+
+                <br>
+
+                ${item.preco.toLocaleString()} Kz × ${item.quantidade}
+
+            </div>
+
+            <div class="controles">
+
+                <button onclick="diminuir(${index})">
+                −
+                </button>
+
+                <strong>${item.quantidade}</strong>
+
+                <button onclick="aumentar(${index})">
+                +
+                </button>
+
+            </div>
+
         </div>
+
         `;
 
     });
+
 
     lista.innerHTML = html;
 
     document.getElementById("total").innerText =
         total.toLocaleString();
+
+    contador.innerText =
+        quantidadeTotal;
+
 }
+
+
+function irParaCarrinho(){
+
+    document.getElementById("carrinho").scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
 
 function enviarWhatsApp(){
 
@@ -301,32 +741,51 @@ function enviarWhatsApp(){
         alert("Adicione pelo menos um produto ao pedido.");
 
         return;
+
     }
+
 
     let mensagem =
         "Olá KUDIMA CAFÉ! Gostaria de fazer este pedido:%0A%0A";
 
+    let total = 0;
+
+
     pedido.forEach((item,index)=>{
 
+        const subtotal =
+            item.preco * item.quantidade;
+
+        total += subtotal;
+
+
         mensagem +=
-        `${index + 1}. ${item.nome} - ${item.preco.toLocaleString()} Kz%0A`;
+            `${index + 1}. ${item.nome} x${item.quantidade} — ${subtotal.toLocaleString()} Kz%0A`;
 
     });
+
 
     mensagem +=
         `%0ATotal: ${total.toLocaleString()} Kz`;
 
+
     /*
-    COLOQUE AQUI O NÚMERO DO WHATSAPP
-    Exemplo: 244923000000
+    IMPORTANTE:
+    SUBSTITUA O NÚMERO ABAIXO PELO WHATSAPP REAL DO KUDIMA CAFÉ.
+
+    Exemplo:
+    244923123456
     */
 
     const numero = "244923000000";
 
+
     const url =
         `https://wa.me/${numero}?text=${mensagem}`;
 
+
     window.open(url,"_blank");
+
 }
 
 </script>
